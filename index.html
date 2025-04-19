@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassy Task Manager</title>
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="flex items-center justify-center p-4">
+    <div class="w-full max-w-md">
+        <!-- Header -->
+        <div class="glass rounded-2xl p-6 mb-6">
+            <h1 class="text-2xl font-bold text-white mb-1">Glassy Task Manager</h1>
+            <p class="text-white/80">A beautiful DOM manipulation demo</p>
+        </div>
+
+        <!-- Add Task Form -->
+        <form id="taskForm" class="glass rounded-2xl p-6 mb-6">
+            <div class="flex gap-2">
+                <input type="text" id="taskInput" placeholder="Add a new task..." 
+                    class="glass-input flex-1 px-4 py-3 rounded-xl text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-white/30">
+                <button type="submit" class="bg-white/20 hover:bg-white/30 text-white px-4 py-3 rounded-xl transition-all duration-300">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </form>
+
+        <!-- Task List Container -->
+        <div class="glass rounded-2xl p-6">
+            <!-- Task Controls -->
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold text-white">Your Tasks</h2>
+                <div class="flex items-center">
+                    <span id="taskCount" class="bg-white/20 text-white text-sm font-medium px-3 py-1 rounded-full">
+                        0 tasks
+                    </span>
+                </div>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex mb-6 gap-2">
+                <button data-filter="all" class="filter-btn bg-white/20 text-white px-3 py-1 rounded-full text-sm hover:bg-white/30 transition">
+                    All
+                </button>
+                <button data-filter="active" class="filter-btn bg-white/10 text-white/80 px-3 py-1 rounded-full text-sm hover:bg-white/20 transition">
+                    Active
+                </button>
+                <button data-filter="completed" class="filter-btn bg-white/10 text-white/80 px-3 py-1 rounded-full text-sm hover:bg-white/20 transition">
+                    Completed
+                </button>
+            </div>
+
+            <!-- Task List -->
+            <ul id="taskList" class="space-y-3">
+                <!-- Tasks will be added here dynamically -->
+            </ul>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="text-center py-8">
+                <i class="fas fa-tasks text-4xl text-white/30 mb-3"></i>
+                <p class="text-white/60">No tasks yet. Add one above!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
